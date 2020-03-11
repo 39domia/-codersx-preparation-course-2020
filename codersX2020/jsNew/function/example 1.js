@@ -1,6 +1,6 @@
 var result = 0;
 function sum(a, b) {
-  var result; // thêm var vôaaaa
+  var result; // thêm var vô
   result = a + b;
   return result;
 }
