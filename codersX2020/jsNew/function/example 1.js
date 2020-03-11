@@ -1,8 +1,9 @@
-var result = 0;
-function sum(a, b) {
-  var result; // thêm var vô.
-  result = a + b;
-  return result;
+var currencySymbol = "$";
+
+function showMoney(amount) {
+    var currencySymbol = "€";
+    // console.log(amount + currencySymbol);
+      return currencySymbol + amount;
 }
-result = result + 1;
-console.log(sum(2, 4));
+
+console.log(showMoney(100));
