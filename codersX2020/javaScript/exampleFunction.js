@@ -30,9 +30,9 @@ function sumOddsInString(str) {
   var oddCharacters = filterOdds(characters);
   var oddNumbers = toNumber(oddCharacters);
   var result = sum(oddNumbers);
-  return result;
+  return oddNumbers;
 }
 
 // chạy thử:
 console.log(sumOddsInString("A129485730FA"));
-// console.log(sumOddsInString("12345678"));
+// console.log(sumOddsInString("12345678")); a
