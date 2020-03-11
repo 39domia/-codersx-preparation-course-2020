@@ -4,6 +4,5 @@ function sum(a, b) {
   result = a + b;
   return result;
 }
-sum(2, 3);
-result;
-console.log(result);
+result = result + 1;
+console.log(sum(2, 4));
