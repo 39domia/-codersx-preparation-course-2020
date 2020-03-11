@@ -35,4 +35,4 @@ function sumOddsInString(str) {
 
 // chạy thử:
 console.log(sumOddsInString("A129485730FA"));
-// console.log(sumOddsInString("12345678")); a
+// console.log(sumOddsInString("12345678"));
