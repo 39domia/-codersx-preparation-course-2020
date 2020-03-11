@@ -1,6 +1,9 @@
+var result = 0;
 function sum(a, b) {
-    var result = a + b;
-    return result;
-  }
-  sum(2, 3);
-  console.log(sum(2, 4));
+  var result; // thêm var vô
+  result = a + b;
+  return result;
+}
+sum(2, 3);
+result;
+console.log(result);
