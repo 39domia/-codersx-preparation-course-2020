@@ -15,6 +15,6 @@ var apartment = {
   };
   
   function getObjectKey(obj, keys) {
-    // Write code here...
+    // return ["bedroom", "area", "bed", "type", "price"];
   }
-  
+  console.log(getObjectKey(apartment));
