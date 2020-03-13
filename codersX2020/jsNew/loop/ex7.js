@@ -9,5 +9,14 @@
 
 */
 function has(array, value) {
-    // viết code ở đây
-  }
+    var check = false;
+    for (var myElement of array) {
+        if (myElement === value)
+            check = true;
+        else check = false;
+    }
+    return check;
+}
+
+console.log(has([5, 4, 4, 8, 4], 1));
+//true
