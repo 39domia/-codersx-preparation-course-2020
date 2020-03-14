@@ -7,9 +7,7 @@
  * countOccurrences(['a', 'b', 'c', 'b', 'a']) // { a: 2, b: 2, c: 1 };
 }
 */
-
 function countOccurrences(arr) {
     // viết code ở đây.
-  }
-  
+}
   
