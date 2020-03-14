@@ -17,14 +17,17 @@ var voters = [
   ];
   
 function totalVotes(arr) {
-    var filter = arr.map(function (x) {
-        if (x.voted == true)
-            return 1;
-        else return 0;
-    })
-    return filter.reduce(function (x, y) {
-        return x + y;
-    })
+    // var filter = arr.map(function (x) {
+    //     if (x.voted == true)
+    //         return 1;
+    //     else return 0;
+    // })
+    // return filter.reduce(function (x, y) {
+    //     return x + y;
+    // })
+    return arr.reduce(function (x, y) {
+        return x + y.voted;
+    }, 0)
 
 }
 console.log(totalVotes(voters))
