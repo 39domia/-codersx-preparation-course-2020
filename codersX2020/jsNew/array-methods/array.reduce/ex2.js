@@ -8,6 +8,20 @@
 }
 */
 function countOccurrences(arr) {
-    // viết code ở đây.
+    return arr.reduce((acc, curr) => {
+        acc[curr] ? acc[curr]++ : acc[curr] = 1;
+        return acc
+    }, {})
 }
-  
+console.log(countOccurrences(['a', 'b', 'c', 'b', 'a']))
+
+function count(arr) {
+    return arr.reduce(function (x, y) {
+        // return (x[y]);
+        if (x[y])
+            x[y]++;
+        else x[y] = 1;
+        return x;
+    }, {})
+}
+console.log(count(['a', 'b', 'c', 'b', 'a']))
