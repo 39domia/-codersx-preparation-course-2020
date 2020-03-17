@@ -22,6 +22,14 @@ var listProducts = [
     {id: 10, categoryId: 2, name: 'Lò vi sóng'},
    ]
    
-   function filterProductsByCategoryId(products, categoryId) {
-     // your code here! 
-   }
+function filterProductsByCategoryId(products, cId) {
+    
+    return products.filter(function(x){
+        return  x.categoryId === cId
+    })
+    
+}
+console.log(filterProductsByCategoryId(listProducts, 1)) 
+
+
+//    [ { id: 1, categoryId: 1, name: 'Tivi' }, { id: 2, categoryId: 1, name: 'Tủ lạnh' }, { id: 4, categoryId: 1, name: 'Máy giặt' }, { id: 8, categoryId: 1, name: 'Điều hoà' } ]
