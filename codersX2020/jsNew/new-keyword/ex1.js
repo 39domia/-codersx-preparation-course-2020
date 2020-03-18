@@ -7,8 +7,13 @@
  * Viết hàm showInfo trả về object đó
 */
 
-var student = {}
+var student = {
+    name: "CodersX",
+    sex: "Male",
+    age: 1
+}
 
 function showInfo(obj) {
-  // viết code ở đây
+    return obj
 }
+console.log(typeof student.name)
