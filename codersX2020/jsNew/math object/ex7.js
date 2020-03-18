@@ -5,7 +5,9 @@
  */
 
 function trigonim(number) {
-    return [Math.sin(number).toFixed(3),Math.cos(number).toFixed(3),Math.tan(number).toFixed(3)];
+    // return [Math.sin(number).toFixed(3),Math.cos(number).toFixed(3),Math.tan(number).toFixed(3)];
+    var result =  [Math.sin(number),Math.cos(number),Math.tan(number)];
+    return result.map(x => x.toFixed(3));
 }
 console.log(trigonim(45))
 
