@@ -13,7 +13,7 @@ function Shape(color, shape, fill) {
     this.fill = fill
 }
 Shape.prototype.name = function(){
-    console.log(this.color+ ' Cu lua');
+     return ' Cu lua';
 }
 
 var shape1 = new Shape("red", "rectangle", true);
