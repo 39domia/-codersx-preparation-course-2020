@@ -1,5 +1,5 @@
-var Mouse = require('./aa');
-var Cat = require('./bb');
+var Mouse = require('./mouse');
+var Cat = require('./cat');
 var mickey = new Mouse('black');
 var jerry = new Mouse('yellow');
 
