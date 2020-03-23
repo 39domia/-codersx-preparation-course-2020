@@ -47,6 +47,12 @@ function editContact() {
     console.log('Edit done');
 
 }
+function deleteContact(){
+    var indexDelete = readlineSync.question('Enter index: ');
+    contacts.splice(indexDelete, 1);
+    console.log('Delete done!');
+
+}
 function menu() {
     console.log('1. Show contacts');
     console.log('2. Add contacts');
@@ -70,7 +76,9 @@ function menu() {
             menu();
             break;
         case '4':
-
+            deleteContact();
+            menu();
+            break;
         case '5':
             console.log('Thanks and see you next time!');
             break;
