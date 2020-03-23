@@ -20,7 +20,7 @@ function loadData() {
 
 function showContact() {
     for (contact of contacts) {
-        console.log(contact.name, contact.phoneNumber);
+        console.log(contacts.indexOf(contact), contact.name, contact.phoneNumber);
     }
 }
 
@@ -38,7 +38,15 @@ function saveData() {
     var saveContacts = JSON.stringify(contacts);
     fs.writeFileSync('./data.json', saveContacts);
 }
+function editContact() {
+    var indexEdit = readlineSync.question('Enter index: ');
+    var nameEdit = readlineSync.question('Change name to: ');
+    var phoneEdit = readlineSync.question('Change phone number to: ');
+    contacts[indexEdit].name = nameEdit;
+    contacts[indexEdit].phoneNumber = parseInt(phoneEdit);
+    console.log('Edit done');
 
+}
 function menu() {
     console.log('1. Show contacts');
     console.log('2. Add contacts');
@@ -57,6 +65,9 @@ function menu() {
             menu();
             break;
         case '3':
+            editContact();
+            saveData();
+            menu();
             break;
         case '4':
 
