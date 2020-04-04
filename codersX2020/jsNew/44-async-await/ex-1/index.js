@@ -11,14 +11,15 @@ var axios = require('axios');
 //       });
 //   }
 // );
-function readFilePromise(pathOrLink) {
+function readFilePromise(path) {
     return new Promise(function(resolve, reject){
-        fs.readFile(pathOrLink, { encoding: 'utf8'}, function(err, data){
+        fs.readFile(path, { encoding: 'utf8'}, function(err, data){
             if (err)
                 reject(err);
             else (data)
-                resolve('Data downloaded from disk' +  data);
-        });        
+            resolve(data);
+        })
+                     
     });
 };
 function readUrlPromise(link) {
@@ -30,19 +31,24 @@ function readUrlPromise(link) {
             else (data) 
                 resolve(data)     
         })
-        .then(function(res) {
-            console.log('Data downloaded from url', res.data);
-        });    
+        
     });
 };
 async function run() {
-    // var readFile = await readFilePromise('./data.json');
-    var readUrl = await readUrlPromise('https://jsonplaceholder.typicode.com/todos/1');
-    console.log( readUrl);
-    return [ readUrl];
+    var readFile = await readFilePromise('./data.json')
+    .then(function(data) {
+        console.log(data);
+        });  
+    var readUrl = await readUrlPromise('https://jsonplaceholder.typicode.com/todos/1')
+    .then(function(res) {
+        console.log('Data downloaded from url', res.data);
+    }); 
+    return [readFile, readUrl];
+    
 }
 
 run()
+
 
 // run().then(function(values){
 //     console.log(values)
