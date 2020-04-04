@@ -1,2 +1,3 @@
-var now = new Date();
-console.log(now);
+var moment = require('moment');
+var day = moment("2020-04-02");
+console.log(day)

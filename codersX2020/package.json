@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "axios": "^0.19.2",
+    "moment": "^2.24.0",
     "promise-fs": "^2.1.1",
     "readline-sync": "^1.4.10",
     "request": "^2.88.2"
