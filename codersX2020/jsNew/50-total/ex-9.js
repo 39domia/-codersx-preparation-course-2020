@@ -1,15 +1,20 @@
-/**
- * Dùng vòng lặp for để hiển thị ra màn hình bảng chữ cái abc.
- * Gợi ý: Dùng String.fromCharCode
- * Ví dụ: String.fromCharCode(97)) sẽ trả về ký tự"a" 
- * Tham khảo: http://www.asciitable.com/ để hiểu thêm về mã ascii
- */
+//Viết function omitCharAt  trả về chuỗi đã được loại bỏ ký tại vị trí n bất kỳ
+//Lưu ý cho chuỗi 'abcd' :
+// 		element    'a'|'b'|'c'|'d'
+//		index 	    0	|	1	|	2	|	3
+//  n = 1 ------------------- 'acd'
+//  n = 2 ------------------- 'abd'
 
-function fromCharCode() {
-    var result = '';
-    for(var i = 97; i < 123; i++){
-        result = result + String.fromCharCode(i);
+function omitCharAt(str, n) {
+    var split = str.split('');
+    for (var i = 0; i < split.length; i++) {
+        if (split[i] === split[n]) {
+            split.splice(i, 1);
+        }
     }
-    return result;
+    return split.join('');
 }
-console.log(fromCharCode());
+console.log(omitCharAt("Hello Quang Dat", 8))
+
+
+// "Hello Qung Dat"

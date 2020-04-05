@@ -1,28 +1,31 @@
-/**
- * Chỉ sử dụng vòng lặp for và if else để hoàn thiện hàm tìm số lớn nhất trong 1 array
- */
+/* Hãy viết một hàm để tìm một số có số lần lặp lại nhiều nhất trong một dãy các số nguyên.
 
+Input: dãy số
+Output: 1 dãy số bao gồm các số có số lần lặp lại nhiều nhất
 
-function max(arr) {
-    var result = arr[0];
-    for (var i = 0; i < arr.length; i++) {    
-        if (arr[i + 1] > result) {
-            {
-                result = arr[i + 1];
-                
-            }
-        } else {
-            result;
-        }        
+ví dụ:
+Input: [1,2,3,4,1,2,2,1]
+Output: [1,2]*/
+
+function findMostFrequent(arr) {
+    let obj = arr.reduce(function (a, b) {
+        a[b] = (a[b] || 0) + 1;
+        return a;
+    }, {});
+    let max = Math.max(...Object.values(obj));
+    return Object.keys(obj).filter(i => obj[i] === max).map(i => Number(i));
+}
+console.log(findMostFrequent([1, 1, 2, 2, 1]))
+
+function findMostFrequent(arr) {
+    let result = [];
+    let tmp = arr.filter((item, index) => arr.indexOf(item) === index);
+    let valuearr = tmp.map((x) => arr.filter(i => i === x).length);
+    var max = Math.max.apply(null, valuearr);
+    for (let i = 0; i < valuearr.length; i++) {
+        if (valuearr[i] === max) result.push(tmp[i]);
     }
     return result;
-    // for (var i = 0; i < arr.length; i++){
-    //     arr[i+1] > result? result = arr[i+1]: result;
-    // }
-    // return result;
+}
 
-} [];
-console.log(max([5, 2, 9]));
-console.log(max([8, 16, 10]));
-console.log(max([5, 4, 1]));
-console.log(max([5, 4, 1, 2, 4, 5, 444,7 ,8, 9, 88]));
+// [ 1 ]

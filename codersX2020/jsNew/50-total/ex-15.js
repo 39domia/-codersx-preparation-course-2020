@@ -1,23 +1,8 @@
-var age = 1;
-var canDrive;
-function col(x) {
-    console.log(x);
-};
-
-// Chuyển đổi đoạn code dưới đây dùng ternary operator mà không làm thay đổi logic
-/**
- * if (age > 16) {
- *  canDrive = true;
- * } else {
- *  canDrive = false;
- * }
- * 
- * @param {number} age;
- * @return {boolean} canDrive;
- */
-
-function checkCanDrive(age) { 
-    age > 16? canDrive = true: canDrive= false;
-    return canDrive;
+// viết hàm tạo mới một 1 string từ n ký tự từ vị trí đầu và cuối của chuỗi cũ
+// newString("1wyg5yhd45", 2) // "1w45"
+function newString(str, n) {
+    var result = str.split('');
+    result.splice(n, result.length - n * 2);
+    return result.join('');
 }
-col(checkCanDrive(age));
+console.log(newString("1wyg5yhd45", 2))

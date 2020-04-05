@@ -1,14 +1,16 @@
-/**
- * Viết hàm isTruthy nhận vào 1 giá trị x, trả về true nếu giá trị đó là 1 giá trị truthy, còn không thì trả về false
- * Gợi ý: Nếu không hiểu truthy là gì hãy google với từ khoá `truthy falsy`
- */
-var falsyArr = [false, 0, 0n, '', "", ``, null, undefined, NaN];
-
-function isTruthy(x) {
-    if (falsyArr.indexOf(x) === -1) {
-        return true;
-    } else
-        return false;
+/* Write a function return maximum possible sum of some of its k consecutive numbers 
+(numbers that follow each other in order.) of a given array of positive integers
+*/
+function maxOfSumChain(arr, k) {
+    var sort = arr.sort(function(x, y){
+        return y - x;
+    })
+    var splice = sort.splice(0, k);
+    return splice.reduce(function(x, y){
+        return x + y;
+    })
 }
+console.log(maxOfSumChain([1, 3, 2, 6, 2], 3))
 
-console.log(isTruthy(true));
+
+// 11

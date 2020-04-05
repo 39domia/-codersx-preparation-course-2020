@@ -1,16 +1,31 @@
-/**
- * Viết hàm xếp hạng điểm số theo công thức sau:
- * [0-5): C
- * [5-7): B
- * [7-10]: A
- */
-function grade(score) {
-    var rank = '';
-    score > 0 && score < 5 ? rank = 'C' : (score >= 5 && score < 7) ? rank = 'B' : (score >= 7 && score <= 10) ? rank = 'A' : rank = 'Unranked';
-    return rank;
+/*
+Hãy viết một hàm để kiểm tra xem có thể sắp xếp các kí tự 
+của 1 chuỗi String cho trước thành 1 chuỗi String cho trước khác không?
+
+Input: 2 chuỗi String
+Output: True hoặc False
+
+ví dụ:
+
+Input: abc cba
+Output: True
+
+Input: abx abb
+Output: False
+*/
+
+function rearrangeChar(str1, str2) {
+    var split1 = str1.split('');
+    var split2 = str2.split('');
+    var sort1 = Array.from(split1).sort();
+    var sort2 = Array.from(split2).sort();
+       
+    return sort1.length === sort2.length && sort1.every(function (value, index) {
+        return value === sort2[index]
+    })
+    // return [sort1, sort2]
 }
-console.log(grade(4));
-console.log(grade(5));
-console.log(grade(7));
-console.log(grade(11));
-console.log(grade(-1));
+console.log(rearrangeChar('yhnbgt', 'hybtgn'));
+
+
+// true

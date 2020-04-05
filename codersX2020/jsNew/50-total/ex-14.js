@@ -1,34 +1,23 @@
-/**
- * Sử dụng vòng lặp while để tìm bội số chung lớn nhất của 3 và 5 trong khoảng từ 0 đến 1000
- */
-function LCNof3() {
-    var result3 = [];
-    var x = 0;
-    while (x < 1001) {
-        if (x % 3 === 0) {
-            result3.push(x);
-        }
-        ++x;
+/* Viết hàm toNextChar dùng để thay thế mọi ký tự trong một chuỗi 
+thành ký tự theo sau nó trong bảng chữ cái. Ví dụ: "Hello" chuyển thành "Ifmmp"
+// Tham số:
+// - String: chuỗi nhập vào ban đầu.
+*/
+function toNextChar(str) {
+    var result = [];
+    result = str.split('')
+    for (var i = 0; i < result.length; i++){
+        result[i] = result[i].charCodeAt(0)
     }
-    var result5 = [];
-    var i = 0;
-    while (i < 1001) {
-        if (i % 5 === 0) {
-            result5.push(i);
-        }
-        ++i;
+    for (var i = 0; i < result.length; i++){
+        result[i] +=1;
     }
-    // (function (result3, result5) {
-    var tMax = 0;
-    for (var a = 0; a < result3.length; a++) {
-        for (var b = 0; b < result5.length; b++) {
-            if (result3[a] === result5[b]) {
-                tMax = result5[b];
-                // console.log(result3[a], result5[b]);
-            }
-        }
+    for (var i = 0; i < result.length; i++){
+        result[i] = String.fromCharCode(result[i])
     }
-    return tMax;
-    // })
+    return result.join('')
 }
-console.log(LCNof3());
+console.log(toNextChar('abc'))
+
+
+// "bcd"

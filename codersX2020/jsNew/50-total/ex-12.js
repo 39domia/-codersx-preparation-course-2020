@@ -1,17 +1,17 @@
-// tính tổng của tích của các phần tử của array a với các phần tử của array b.
-/**
- * var a = [1, 2, 3];
- * var b = [10, 20];
- * Kết quả mong muốn: 180 // (10 + 20 + 30) + (20 + 40 + 60)
- */
+/*
+Viết một hàm JavaScript có 1 tham số n trả về tuyệt đối của hiệu só đó và 13, 
+nếu số đó lớn hơn 13 trả về gấp đôi tuyệt đối của hiệu 2 số.
+Example: 
+n = 20 // return 14
+n = 5 // return 8
 
-function sumMultiplyArray(a, b) {
-    var result = 0;
-    for (var i = 0; i < a.length; i++) {
-        for (var j = 0; j < b.length; j++) {
-            result = result + a[i] * b[j];
-        }
+*/
+function difference(n) {
+    if (n < 13) {
+        return Math.abs(13 - n)
     }
-    return result;
+    if (n > 13) {
+        return Math.abs(n - 13) * 2;
+    }
 }
-console.log(sumMultiplyArray([1, 2, 3], [10, 20]));
+console.log(difference(19))

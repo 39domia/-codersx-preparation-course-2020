@@ -1,12 +1,12 @@
-/**
- * Sử dụng vòng lặp for để tính tổng các số có trong mảng:
- */
-
-function sum(array) {
-    var result = 0;
-    for (var element of array) {
-        result = result + element;
-    }
-    return result;
+// Viết hàm nhận vào 2 số a, b
+// Trả về số gần 100 nhất
+// nearestTo100(89, 180) // 89
+function nearestTo100(a, b) {
+    if (Math.abs(a - 100) < Math.abs(b - 100))
+        return a
+    else return b
 }
-console.log(sum([6, 7, 7, 5, 4, 2, 4]));
+nearestTo100(89, 189)
+
+
+// 89

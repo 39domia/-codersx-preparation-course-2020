@@ -1,5 +1,19 @@
-var secretPassword = 'coders.tokyo';
-var readline = require('readline-sync');
+/* Viết hàm checkInt để kiểm tra hai số nguyên được nhập vào. 
+  Nếu có 1 số âm và một số dương thì trả về true. 
+  Các trường hợp khác trả về false. 
+  Số 0 là số không âm cũng không dương
+  Tham số:
+  - number1: số nguyên thứ nhất
+  - number2: số nguyên thứ hai
+*/
 
-var result = readline.question('Nhập vào mật khẩu');
-console.log(result);
+function checkInt(number1, number2) {
+    if (number1 < 0 || number2 < 0){
+        if (number1 < 0 && number2 < 0) {
+            return false
+        }
+    return true
+    }       
+
+    else return false
+}
