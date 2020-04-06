@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+- Sử dụng getElementsByTagName() để lấy ra danh sách các <p> có class là 'foo'
+- Lặp qua các phần tử và thay đổi nội dung của từng phần tử bằng cách append (thêm vào cuối) một đường link tới coders.tokyo site
+-->
+    <p class="foo">Foo1 </p>
+    <p class="foo">Foo2 </p>    
+    <p>Foo3</p>
+    <p>Foo4</p>
+    <script>
+        var takeP = document.getElementsByTagName('p');
+        var htmlFoo = document.getElementsByClassName('foo');
+        for (var i = 0; i < htmlFoo.length; i++) {
+            htmlFoo[i].innerHTML = htmlFoo[i].innerHTML + '<a href="https://school.coders-x.com/">CodersX</a>';
+        }
+    </script>
+</body>
+
+</html>
