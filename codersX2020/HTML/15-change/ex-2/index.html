@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div>
+        <input type="color" id="head">
+        <p id="p-color">This text line will change color repy on you</p>
+    </div>
+    <script>
+        var inputColor = document.getElementById('head');
+        var pColor = document.getElementById('p-color');
+        document.addEventListener('change', function(){
+            pColor.style.color = inputColor.value;         
+                
+        })
+    </script>
+</body>
+
+</html>
