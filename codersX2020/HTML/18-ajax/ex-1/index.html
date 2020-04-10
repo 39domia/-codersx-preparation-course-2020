@@ -7,9 +7,8 @@
     <title>Document</title>
 </head>
 
-<body>
-    <pre style="word-wrap: break-word; white-space: pre-wrap;" id="p-output">
-    </pre>
+<body style="background-color: white;">
+    
 
     <!-- SCRIPT -->
 
@@ -21,13 +20,15 @@
         // Để thêm thư viện vào jsfiddle, nhấn vào Resources ở cột trái, nhập link vào rồi ấn (+)
         // 2. Làm tương tự, thay vì dùng axios, hãy dùng fetch (google để biết cách dùng)
 
-        var pOutput = document.getElementById('p-output');
-        var url = 'https://randomuser.me/api/';
+        // var fetchUrl = require("fetch").fetchUrl;
+
         
-        axios.get(url).then((res) => {
-              var todos = res.data;
-              render(todos);
-        });
+        var url = 'https://randomuser.me/api/';
+
+        fetch(url)
+            .then(response => response.json())
+            .then(json =>{render(json)} )
+
         function render(item){
             var result  = JSON.stringify(item);
             document.write(result)
