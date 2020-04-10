@@ -1,0 +1,64 @@
+{
+    "results": [{
+        "gender": "male",
+        "name": {
+            "title": "Mr",
+            "first": "Timmothy",
+            "last": "Gonzales"
+        },
+        "location": {
+            "street": {
+                "number": 8994,
+                "name": "Victoria Road"
+            },
+            "city": "Westminster",
+            "state": "County Armagh",
+            "country": "United Kingdom",
+            "postcode": "Z9 1JU",
+            "coordinates": {
+                "latitude": "11.1351",
+                "longitude": "-138.4265"
+            },
+            "timezone": {
+                "offset": "-8:00",
+                "description": "Pacific Time (US & Canada)"
+            }
+        },
+        "email": "timmothy.gonzales@example.com",
+        "login": {
+            "uuid": "e52eee26-4000-4987-bdc3-0e500c85a0f5",
+            "username": "smallduck110",
+            "password": "slayer1",
+            "salt": "tdabKIEE",
+            "md5": "1d3bceb0d106e07eccf44065c1ae87c3",
+            "sha1": "f61e27b17236ee4972cdd7eeb6297edc2940f168",
+            "sha256": "9991aca05fe68886f700e548e7d24bde6d7a310d1e076abbd78c660da2ea8d63"
+        },
+        "dob": {
+            "date": "1993-01-10T17:19:46.587Z",
+            "age": 27
+        },
+        "registered": {
+            "date": "2008-04-01T17:41:08.512Z",
+            "age": 12
+        },
+        "phone": "016974 55300",
+        "cell": "0743-283-887",
+        "id": {
+            "name": "NINO",
+            "value": "CT 36 72 01 I"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/3.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/3.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/3.jpg"
+        },
+        "nat": "GB"
+    }],
+    "info": {
+        "seed": "67d8240cce4e9099",
+        "results": 1,
+        "page": 1,
+        "version": "1.3"
+    }
+}

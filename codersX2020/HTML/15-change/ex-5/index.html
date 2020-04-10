@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Select city</h1>
+    <input class="my-check-box" id="checkbox1" type="checkbox" name="vehicle" value="Bike">
+    <label for="vehicle1"> Ha Noi</label><br>
+    <input class="my-check-box" type="checkbox" name="vehicle1" value="Car">
+    <label for="vehicle2"> Hai Phong</label><br>
+    <input class="my-check-box" type="checkbox" name="vehicle2" value="Boat">
+    <label for="vehicle3"> HCM city</label><br>
+    <input class="my-check-box" type="checkbox" name="vehicle1" value="Car">
+    <label for="vehicle2"> Da Nang</label><br>
+    <input class="my-check-box" type="checkbox" name="vehicle2" value="Boat">
+    <label for="vehicle3"> Hue</label><br><br>
+    <p>_______________________________________</p>
+    <div id="checked"></div>
+    <script>
+        var checked = document.getElementById('checked');
+        var ipCheckBox = document.getElementsByClassName('my-check-box')
+        // checked.innerHTML = document.querySelectorAll('input[type="checkbox"]:checked').length;
+        var checkbox1 = document.getElementById('checkbox1');
+        for (var i = 0; i < ipCheckBox.length; i++) {
+            ipCheckBox[i].addEventListener('click', countCheck)
+        }
+
+        function countCheck() {
+            var countChecked = 0;
+            for (var i = 0; i < ipCheckBox.length; i++) {
+                if (ipCheckBox[i].checked == true) {
+                    countChecked++;
+                }
+            }
+            checked.innerHTML = 'You selected ' + countChecked + ' city.';
+        }
+        countCheck();
+    </script>
+</body>
+
+</html>

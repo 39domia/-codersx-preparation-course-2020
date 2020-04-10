@@ -6,6 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Hello</h1>
+    <p>What is your name?</p>
+    <input id= "ip-name" type="text" placeholder="Type your name">
+    <button id="btn-go" >Go</button>
+    <p id="p-output"></p>
+    <script>
+        var ipName = document.getElementById('ip-name');
+        var btnGo = document.getElementById('btn-go');
+        var pOutput = document.getElementById('p-output');
+        btnGo.addEventListener('click', function(){
+            pOutput.innerHTML = 'Hello, ' + ipName.value;
+        })
+        
+    </script>
 </body>
 </html>

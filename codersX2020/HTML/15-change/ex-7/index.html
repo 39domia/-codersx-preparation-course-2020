@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="click-me" type="button">Click me</button>
+    <p id="text" style="display:none">You are amazing :v</p>
+    <script>
+        var clickMe = document.getElementById("click-me");
+        var text = document.getElementById("text");
+        var i = 1;
+        clickMe.addEventListener('click', function () {
+            i++;
+            if (i % 2 === 0)
+                text.style.display = 'block';
+
+            else
+                text.style.display = 'none';
+        })
+    </script>
+</body>
+
+</html>

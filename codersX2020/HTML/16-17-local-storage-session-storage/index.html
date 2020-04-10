@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>To Do list</h1>
+
+    <input id="ip-todo" type="text" placeholder="New to do">
+    <button id="btn-add">Add</button>
+    <p id="p-output">______________________________</p>
+    <ul id="ul-output" style="list-style-type: none"></ul>
+    <script>
+        var storageKey = 'todoList';
+        var dataString = localStorage.getItem(storageKey)
+        var todoList;
+
+        if (dataString)
+            todoList = JSON.parse(dataString);
+        else
+            todoList = [];
+
+        var ipTodo = document.getElementById('ip-todo');
+        var btnAdd = document.getElementById('btn-add');
+        var ulOutput = document.getElementById('ul-output');
+        var todoLI = []
+
+        ipTodo.value = sessionStorage.getItem('draft');
+        ipTodo.addEventListener('change', testSessionStorage);
+
+        function testSessionStorage() {
+            sessionStorage.setItem('draft', ipTodo.value);
+        }
+
+        function render() {
+            todoLI = todoList.map(function (item) {
+                return '<li>' + item + '</li>';
+            })
+            ulOutput.innerHTML = todoLI.join('');
+        }
+        btnAdd.addEventListener('click', function () {
+            todoList.push(ipTodo.value);
+            localStorage.setItem(storageKey, JSON.stringify(todoList))
+            render();
+            ipTodo.value = '';
+        })
+        render();
+    </script>
+</body>
+
+</html>
