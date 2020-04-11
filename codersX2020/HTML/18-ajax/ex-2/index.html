@@ -4,18 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>18.2</title>
+    <title>Document</title>
 </head>
 
 <body>
+    <h1>To Do list</h1>
 
+    <input id="ip-todo" type="text" placeholder="New to do">
+    <button id="btn-add">Add</button>
+    <p id="p-output">______________________________</p>
+    <ul id="ul-output" style="list-style-type: none"></ul>
 
+    
+    <!-- SCRIPT -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         // 1. Tạo một REST api server sử dụng json-server
         // 2. Đọc documentation của json-server và axios, tìm hiểu các method GET, POST, PUT, PATCH, DELETE
         // 3. Làm các ví dụ sử dụng axios để gửi các request lên json-server để tạo object mới, update 1 object với dữ liệu mới, xoá 1 object
         // Lưu ý: đây là một bài khó nếu bạn là beginner, tuy nhiên, khi hiểu được bài này bạn sẽ có thể lên 1 level mới (beginner cao cấp).
         // Hãy dành 1 ngày để đọc, tìm hiểu, thử. Sau 1 ngày nếu bạn không làm được thì có thể hỏi trên Coders.Tokyo Slack hoặc JsLand.
+
+        var url = 'http://localhost:9081/todos';
+        axios.get(url).then((res) => {
+            var todos = res.data;
+            render(todos);
+        }).catch((err) => {
+
+        });
+
+        var ipTodo = document.getElementById('ip-todo');
+        var btnAdd = document.getElementById('btn-add');
+        var ulOutput = document.getElementById('ul-output');
+        var todoLI = []
+
+        // sessionStorage
+        ipTodo.value = sessionStorage.getItem('draft');
+        ipTodo.addEventListener('change', testSessionStorage);
+
+        function testSessionStorage() {
+            sessionStorage.setItem('draft', ipTodo.value);
+        }
+
+        function render(items) {
+            todoLI = items.map(function (item) {
+                return '<li>' + item.content + '</li>';
+            })
+            ulOutput.innerHTML = todoLI.join('');
+        }
+
+        // add to data list function
+        btnAdd.addEventListener('click', function () {
+            // todoList.push(ipTodo.value);
+            // localStorage.setItem(storageKey, JSON.stringify(todoList))
+
+            render();
+            ipTodo.value = '';
+        })
+        render();
     </script>
 </body>
 
