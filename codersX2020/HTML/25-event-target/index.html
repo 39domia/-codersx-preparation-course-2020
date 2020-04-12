@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>To Do list</h1>
+
+    <input id="ip-todo" type="text" placeholder="New to do">
+    <button id="btn-add">Add</button>
+    <p>______________________________</p>
+    <ul id="ul-output" ></ul>
+    <script>
+        var storageKey = 'todoList';
+        var dataString = localStorage.getItem(storageKey)
+        var ipTodo = document.getElementById('ip-todo');
+        var btnAdd = document.getElementById('btn-add');
+        var ulOutput = document.getElementById('ul-output');
+        var todoLI = []
+        var todoList;
+
+        btnAdd.addEventListener('click', addItem);
+        ulOutput.addEventListener('click', onListClicked)
+
+        
+        if (dataString)
+            todoList = JSON.parse(dataString);
+        else
+            todoList = [];
+
+        function render() {
+            todoLI = todoList.map(function (item, i) {
+                return '<li>' + item + ' <button data-id='+ i +'>Delete</button></li>';
+            })
+            ulOutput.innerHTML = todoLI.join('');
+        }
+        
+        function addItem() {
+            todoList.push(ipTodo.value);
+            localStorage.setItem(storageKey, JSON.stringify(todoList))
+            render();
+            ipTodo.value = '';
+        }
+
+        function onListClicked(event){
+            var button  = event.target;
+            var i = parseInt(button.dataset.id);
+            todoList.splice(i, 1);
+            render();
+            localStorage.setItem(storageKey, JSON.stringify(todoList))
+        }    
+        
+        render();
+
+    </script>
+</body>
+
+</html>
