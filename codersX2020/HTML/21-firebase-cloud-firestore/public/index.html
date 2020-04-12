@@ -37,37 +37,48 @@
 
     <input id="ip-todo" type="text" placeholder="New to do">
     <button id="btn-add">Add</button>
-    <p id="p-output">______________________________</p>
-    <ul id="ul-output" style="list-style-type: none"></ul>
+    <p>______________________________</p>
+    <ul id="ul-output"></ul>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         var db = firebase.firestore();
 
-        db.collection('todos').get().then(function(snap){
-            var docs = snap.docs;
-            render(docs);
+        var todoList = []
+        db.collection('todos').get()
+        .then(function(snap){
+            todoList = snap.docs;            
+            render();
         })
 
         var ipTodo = document.getElementById('ip-todo');
-        var btnAdd = document.getElementById('btn-add');        
-        var todoLI = []        
+        var btnAdd = document.getElementById('btn-add');     
+        var ulOutput = document.getElementById('ul-output');   
+             
 
-        function render(items) {
-            var ulOutput = document.getElementById('ul-output');
-            todoLI = items.map(function (item) {
+        function render() {            
+            var todoLI = todoList.map(function (item) {
                 var data = item.data();
                 return '<li>' + data.content + '</li>';
-            })
+            });
             ulOutput.innerHTML = todoLI.join('');
         }
-        btnAdd.addEventListener('click', function () {
-            todoList.push(ipTodo.value);
-            localStorage.setItem(storageKey, JSON.stringify(todoList))
-            render();
-            ipTodo.value = '';
-        })
-        // render();
+        
+        function adddItem() {            
+            var newItem = { content: ipTodo.value };
+            db.collection('todos').add(newItem)
+            .then(function(docRef){
+                return docRef.get();
+            })
+            .then(function(snap){
+                todoList.push(snap);
+                render();
+                ipTodo.value = '';
+            });
+            
+        }
+        
+        btnAdd.addEventListener('click', adddItem);
       });
     </script>
   </body>
