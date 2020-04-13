@@ -32,8 +32,6 @@
         
         btnAdd.addEventListener('click', addItem)
 
-
-
         function render() {
             todoLI = todoList.map(function (item) {
                 return '<li>' + item.content + '</li>';
@@ -47,11 +45,9 @@
             axios.post(url, newItem).then(function(item){
                 render();
                 ipTodo.value = '';
-            })
-            
+            })            
         }
-
-
+        
         render();
     </script>
 </body>
