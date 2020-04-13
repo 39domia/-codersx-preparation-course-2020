@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>To Do list</h1>
+
+    <input id="ip-todo" type="text" placeholder="New to do">
+    <button id="btn-add">Add</button>
+    <p id="p-output">______________________________</p>
+    <ul id="ul-output" style="list-style-type: none"></ul>
+    <!-- SCRIPT -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        var url = 'http://localhost:9081/todos';
+        var todoList = [];
+        
+        axios.get(url).then((res) => {
+            todoList = res.data;
+            render();
+        });
+
+        var ipTodo = document.getElementById('ip-todo');
+        var btnAdd = document.getElementById('btn-add');
+        var ulOutput = document.getElementById('ul-output');
+        var todoLI = []; // return '<li>' + item.content + '</li>';
+        
+        btnAdd.addEventListener('click', addItem)
+
+
+
+        function render() {
+            todoLI = todoList.map(function (item) {
+                return '<li>' + item.content + '</li>';
+            })
+            ulOutput.innerHTML = todoLI.join('');
+        }
+
+        // add to data list function
+        function addItem() {
+            var newItem = { content: ipTodo.value };
+            axios.post(url, newItem).then(function(item){
+                render();
+                ipTodo.value = '';
+            })
+            
+        }
+
+
+        render();
+    </script>
+</body>
+
+</html>
