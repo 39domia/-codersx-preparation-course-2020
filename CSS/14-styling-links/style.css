@@ -1,0 +1,31 @@
+.link:link {
+    font-size: 50px;
+    color: green;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+.link:visited {
+    color: green;
+}
+.link:hover {
+    text-decoration: underline;
+}
+.link:active {
+    color: red;
+}
+.btn-register {
+    padding: 10px 20px;
+    margin-left: 20px;
+    background-color: #5a5ac4;
+    
+    border: unset;
+    font-family: sans-serif;
+    font-size: 25px;
+}
+.btn-register:hover {
+    background-color: black;
+}
+.btn-link {
+    color: white;
+    text-decoration: none;
+}
