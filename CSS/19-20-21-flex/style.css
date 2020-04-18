@@ -1,0 +1,31 @@
+.container {
+    background-color: rgb(226, 221, 221);
+    height: 400px;
+    width: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* align-items: flex-end; */
+}
+.child {
+    background-color: #ff000085;
+    color: blue;
+    font-size: larger;
+    font-family: sans-serif;
+    
+}
+.child-1 {
+    flex-basis: 100px;
+    /* flex-grow: 1; */
+    order: 2
+}
+.child-2 {
+    background-color: #00ff9d85;
+    flex-basis: 200px;
+    /* flex-grow: 1; */
+    order: 1
+}
+.child-3 {
+    flex-basis: 100px;
+    /* flex-grow: 1; */
+}
