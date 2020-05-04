@@ -1,0 +1,12 @@
+#p1 {
+    color: wheat
+}
+p {
+    color: green !important;
+}
+* {
+    color: red;
+}
+p {
+    color: blue;
+}
