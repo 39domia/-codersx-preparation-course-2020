@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "fetch": "^1.1.0",
     "moment": "^2.24.0",
     "promise-fs": "^2.1.1",
